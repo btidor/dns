@@ -1,0 +1,32 @@
+$TTL 5m
+$ORIGIN tidor.net.
+@               IN      SOA     ns1.tidor.net. hostmaster.tidor.net. (
+                                        0       ; serial number (set by dnssec-signzone)
+                                        6h      ; refresh
+                                        15m     ; update retry
+                                        3d      ; expiry
+                                        5m      ; minimum
+                                )
+                IN      NS      ns1.tidor.net.
+                IN      NS      ns4.he.net.
+
+                IN      MX  10  mxa.mailgun.org.
+                IN      MX  20  mxb.mailgun.org.
+
+                IN      TXT     "v=spf1 a:boop.tidor.net include:mailgun.org ~all"
+                IN      TXT     "google-site-verification=kjYixz-ux1SacLln4mxt5cOIJ9eyzY3KrxjXnw4knDk"
+
+ns1             IN      A       149.248.218.191
+ns1             IN      AAAA    2a09:8280:1::db:d609:0
+
+_dmarc          IN      TXT     "v=DMARC1; p=reject; rua=mailto:090a3272@in.mailhardener.com; adkim=s; aspf=s"
+_mta-sts        IN      TXT     "v=STSv1; id=1"
+_smtp._tls      IN      TXT     "v=TLSRPTv1; rua=mailto:090a3272@in.mailhardener.com"
+
+mailo._domainkey IN     TXT     "k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy3lkS17qoD8YrlqQjChIEKlKXJpPaLu+WVV5ntY8U/am+Yt9WFWaRGmVeFNpMjkVcJwLeqvSs0rcMpyYc09Lussza5ikQNYnaxLtY12M2B8V76x5R/ZmdWyTyfgV04uGAa5VgdAIzGuHN/3MBBryvNO5iyl4ZKmtl2SS319UhK7gJ5PI8tViCN1YQH5Rf4+J6/Hg9rE6p/" "g/Cwt84pXwOgqF+2AQXhuwBZaGmOpjIsymL2m7gBaaGEvvd3wqU9G45ot+/8egHuYpRGQrKuM1xrq6pT+76zIGEzLCXCkQGfmDPIbB7cMxKOY+4IYlQWPVTP17S+hKHBv26uIG1aPM6QIDAQAB"
+mta-sts         IN      CNAME   tidor-mta-sts.b-cdn.net.
+
+boop            IN      A       107.172.103.142
+boop            IN      SSHFP   4 2 8d7f103dd7636d9e3c95273a77565a022af1f8ba85ab27e8de1c8b15955327ff
+
+$INCLUDE "./Ktidor.net.+013+23126.key"
