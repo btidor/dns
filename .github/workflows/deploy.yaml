@@ -1,0 +1,23 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+    schedule:
+      - 17 17 * * 2
+    workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency: deploy
+    steps:
+      - uses: actions/checkout@v6
+      - run: echo "$DNSSEC_PRIVATE_KEY" > Ktest.tidor.net.+013+31680.private
+        env:
+          DNSSEC_PRIVATE_KEY: ${{ secrets.DNSSEC_PRIVATE_KEY }}
+      - run: sudo apt install -y bind9
+      - run: dnssec-signzone -N unixtime -z test.tidor.net && rm *.private
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
