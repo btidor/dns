@@ -1,0 +1,16 @@
+app = 'ns1'
+primary_region = 'sjc'
+
+[[services]]
+  protocol = 'udp'
+  internal_port = 53
+
+  [[services.ports]]
+    port = 53
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 53
+
+  [[services.ports]]
+    port = 53
