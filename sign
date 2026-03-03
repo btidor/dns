@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+if [[ ! -f ".key" ]]; then
+    echo "$0: age decryption key required in .key"
+    exit 1
+fi
+
+# dnssec-keygen -a ECDSAP256SHA256 -f KSK tidor.net
+# age --encrypt --armor --identity .key Ktidor.net*private
+
+trap "rm -f *.private" EXIT
+for file in *.age; do
+    age --decrypt --identity .key --output "${file%.*}" "$file"
+done
+
+dnssec-signzone -N unixtime -z test.tidor.net

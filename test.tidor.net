@@ -1,4 +1,3 @@
-; zone file for test.tidor.net
 $TTL 5m
 $ORIGIN test.tidor.net.
 @               IN      SOA     ns1.test.tidor.net. hostmaster.tidor.net. (

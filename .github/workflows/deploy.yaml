@@ -12,11 +12,11 @@ jobs:
     concurrency: deploy
     steps:
       - uses: actions/checkout@v6
-      - run: echo "$DNSSEC_PRIVATE_KEY" > Ktest.tidor.net.+013+31680.private
+      - run: echo "$AGE_KEY" > .key
         env:
-          DNSSEC_PRIVATE_KEY: ${{ secrets.DNSSEC_PRIVATE_KEY }}
-      - run: sudo apt install -y bind9
-      - run: dnssec-signzone -N unixtime -z test.tidor.net && rm *.private
+          AGE_KEY: ${{ secrets.AGE_KEY }}
+      - run: sudo apt install -y age bind9
+      - run: ./sign
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
