@@ -15,5 +15,4 @@ for file in *.age; do
     age --decrypt --identity .key --output "${file%.*}" "$file"
 done
 
-dnssec-signzone -N unixtime -z test.tidor.net
 dnssec-signzone -N unixtime -z tidor.net
