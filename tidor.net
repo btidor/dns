@@ -11,7 +11,7 @@ $ORIGIN tidor.net.
                 IN      NS      ns4.he.net.
 
                 IN      MX  10  mxa.mailgun.org.
-                IN      MX  20  mxb.mailgun.org.
+                IN      MX  10  mxb.mailgun.org.
 
                 IN      TXT     "v=spf1 a:boop.tidor.net include:mailgun.org ~all"
                 IN      TXT     "google-site-verification=kjYixz-ux1SacLln4mxt5cOIJ9eyzY3KrxjXnw4knDk"
