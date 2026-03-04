@@ -1,0 +1,21 @@
+$TTL 5m
+$ORIGIN btidor.dev.
+@               IN      SOA     ns1.tidor.net. hostmaster.tidor.net. (
+                                        0       ; serial number (set by dnssec-signzone)
+                                        6h      ; refresh
+                                        15m     ; update retry
+                                        3d      ; expiry
+                                        5m      ; minimum
+                                )
+                IN      NS      ns1.tidor.net.
+                IN      NS      ns2.he.net.
+
+                IN      CAA     0 issue letsencrypt.org
+
+                IN      TXT     "v=spf1 -all"
+*._domainkey    IN      TXT     "v=DKIM1; p="
+_dmarc          IN      TXT     "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s"
+
+zbitvector      IN      CNAME   btidor.github.io.
+
+$INCLUDE "./Kbtidor.dev.+013+26929.key"
