@@ -23,8 +23,12 @@ _dmarc          IN      TXT     "v=DMARC1; p=reject; rua=mailto:090a3272@in.mail
 _mta-sts        IN      TXT     "v=STSv1; id=1"
 _smtp._tls      IN      TXT     "v=TLSRPTv1; rua=mailto:090a3272@in.mailhardener.com"
 
+aws._domainkey  IN      TXT     "k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4k8B10TXBerSeMS522Tntld0Q7ASAc44CoP17cnohnebieTRPMxcUy5E5yE56GYOVzdQv1PoSbEChP0udcXhw4ec0TPiNgbK1UwgjPkzK/3i/7OuBbC+Ocuzpej9uDwK4wbf75Q6SQuHFgVaju4t60dET2J4Uw1riUYZNVWZ849zT8Vo6Qqk39aw7tRTquQvTZrFK47n6a" "4exVUymmkb0ftCfjGqFltSWg9iu5L2nc5reKmdSJp0hbHOhkPqMiTct8QhyT+rasaOfCFakNLF2B9GjVZak8RZbjBEv2e4R7TCfonB4248W6K0ALlleloVd3SVTtTotX0OHhWJmvVP0wIDAQAB"
 mailo._domainkey IN     TXT     "k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy3lkS17qoD8YrlqQjChIEKlKXJpPaLu+WVV5ntY8U/am+Yt9WFWaRGmVeFNpMjkVcJwLeqvSs0rcMpyYc09Lussza5ikQNYnaxLtY12M2B8V76x5R/ZmdWyTyfgV04uGAa5VgdAIzGuHN/3MBBryvNO5iyl4ZKmtl2SS319UhK7gJ5PI8tViCN1YQH5Rf4+J6/Hg9rE6p/" "g/Cwt84pXwOgqF+2AQXhuwBZaGmOpjIsymL2m7gBaaGEvvd3wqU9G45ot+/8egHuYpRGQrKuM1xrq6pT+76zIGEzLCXCkQGfmDPIbB7cMxKOY+4IYlQWPVTP17S+hKHBv26uIG1aPM6QIDAQAB"
 mta-sts         IN      CNAME   tidor-mta-sts.b-cdn.net.
+
+aws             IN      MX      10 feedback-smtp.us-west-2.amazonses.com.
+aws             IN      TXT     "v=spf1 include:amazonses.com ~all"
 
 boop            IN      A       107.172.103.142
 boop            IN      SSHFP   4 2 8d7f103dd7636d9e3c95273a77565a022af1f8ba85ab27e8de1c8b15955327ff
