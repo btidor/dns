@@ -17,7 +17,6 @@ $ORIGIN tidor.net.
                 IN      TXT     "google-site-verification=kjYixz-ux1SacLln4mxt5cOIJ9eyzY3KrxjXnw4knDk"
 
 ns1             IN      A       149.248.218.191
-ns1             IN      AAAA    2a09:8280:1::db:d609:0
 
 _dmarc          IN      TXT     "v=DMARC1; p=reject; rua=mailto:090a3272@in.mailhardener.com; adkim=s; aspf=s"
 _mta-sts        IN      TXT     "v=STSv1; id=1"
