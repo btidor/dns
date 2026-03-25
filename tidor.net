@@ -15,6 +15,7 @@ $ORIGIN tidor.net.
 
                 IN      TXT     "v=spf1 a:boop.tidor.net include:mailgun.org ~all"
                 IN      TXT     "google-site-verification=kjYixz-ux1SacLln4mxt5cOIJ9eyzY3KrxjXnw4knDk"
+                IN      TXT     "yahoo-verification-key=b1zbS6gTmhZhqztOQzBamaH6BCJmvIKLEw4Zys+gU9Y="
 
 ns1             IN      A       149.248.218.191
 
