@@ -12,7 +12,7 @@ jobs:
     concurrency: deploy
     steps:
       - uses: actions/checkout@v6
-      - run: sudo apt install -y age bind9
+      - run: sudo apt update && sudo apt install -y age bind9
       - run: make && rm .key
         env:
           AGE_KEY: ${{ secrets.AGE_KEY }}
