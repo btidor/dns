@@ -2,9 +2,9 @@ $TTL 5m
 $ORIGIN ccpa.party.
 @               IN      SOA     ns1.tidor.net. hostmaster.tidor.net. (
                                         0       ; serial number (set by dnssec-signzone)
-                                        6h      ; refresh
-                                        15m     ; update retry
-                                        3d      ; expiry
+                                        5m      ; refresh
+                                        1m      ; update retry
+                                        7d      ; expiry
                                         5m      ; minimum
                                 )
                 IN      NS      ns1.tidor.net.
