@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: sudo apt update && sudo apt install -y age bind9
-      - run: make && rm .key
+      - run: make && make check && rm .key
         env:
           AGE_KEY: ${{ secrets.AGE_KEY }}
       - uses: superfly/flyctl-actions/setup-flyctl@master
