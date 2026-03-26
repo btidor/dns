@@ -33,4 +33,4 @@ aws             IN      TXT     "v=spf1 include:amazonses.com ~all"
 boop            IN      A       107.172.103.142
 boop            IN      SSHFP   4 2 8d7f103dd7636d9e3c95273a77565a022af1f8ba85ab27e8de1c8b15955327ff
 
-$INCLUDE "./Ktidor.net.+013+23126.key"
+$INCLUDE "keys/Ktidor.net.+013+23126.key"

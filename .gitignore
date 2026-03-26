@@ -1,4 +1,4 @@
 .key
 dsset-*
 *.private
-*.signed
+signed/*

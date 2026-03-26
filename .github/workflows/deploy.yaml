@@ -12,11 +12,10 @@ jobs:
     concurrency: deploy
     steps:
       - uses: actions/checkout@v6
-      - run: echo "$AGE_KEY" > .key
+      - run: sudo apt install -y age bind9
+      - run: make && rm .key
         env:
           AGE_KEY: ${{ secrets.AGE_KEY }}
-      - run: sudo apt install -y age bind9
-      - run: ./sign
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
